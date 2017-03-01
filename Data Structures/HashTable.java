@@ -1,55 +1,40 @@
-class HashTable {
-  public HashTable () {
+import java.util.List;
+import java.util.ArrayList;
+
+public class HashTable {
+  public HashTable(int numberOfKeys, int[] hashedKeys) {
+    outerTable = new List[numberOfKeys];
+    for(i=0; i<numberOfKeys; i++) {
+      outerTable[i] = new ArrayList<String>();
+    }
+
 
   }
 
-  private int hash (String k) {
-    return 0;
-
+  protected static int universalHash(int key, int a, int b, int p, int m) {
+    /*  Chosen hash function from H (universal class of hash functions)
+      input: rnd int a, rnd int b, prime p, size of table m, key to be hashed
+      output: hash value for key  */
+    return ((a*key + b) % p) % m;
   }
 
-  public boolean add (String k, String v) {
+  public insert (String k, String v) {
     return false;
 
   }
 
-  public boolean modify (String k, String v) {
+  public delete (String k) {
     return false;
 
   }
 
-  public boolean del (String k) {
-    return false;
-
-  }
-
-  public String get (String k) {
+  public locate (String k) {
     return null;
 
   }
 
-  public void print_all () {
-    return;
-
-  }
-
-  public static void main (String[] args) {
-    HashTable h = new HashTable ();
-    if (!h.add("First", "1")) {
-      System.out.println ("Failed 1");
-    }
-    if (!h.add("Second", "2")) {
-      System.out.println ("Failed 2");
-    }
-    h.modify ("Second", "22");
-    h.print_all ();
-    h.del ("First");
-    if (!h.add("First", "3")) {
-      System.out.println ("Failed 3");
-    }
-    h.print_all ();
-    h.del ("Second");
-    h.del ("Third");
+  public printAll (String k) {
+    return null;
 
   }
 }
